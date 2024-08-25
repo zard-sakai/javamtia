@@ -53,7 +53,7 @@ public class FixedPhilosopher extends AbstractPhilosopher {
         one.putDown();
       }
     } else {
-      // 退化为使用粗锁法
+      // 退化为使用粗锁法：处理 两把锁 hashcode 相同的 情况
       synchronized (FixedPhilosopher.class) {
         Debug.info("%s is picking up %s on his left...%n", this, left);
         left.pickUp();

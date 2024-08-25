@@ -33,7 +33,7 @@ public class ScheduledTaskDemo {
       minConsumption = Integer.valueOf(args[0]);
       maxConsumption = Integer.valueOf(args[1]);
     } else {
-      maxConsumption = minConsumption = 1000;
+      maxConsumption = minConsumption = 3000;
     }
     ses.scheduleAtFixedRate(new SimulatedTask(minConsumption, maxConsumption,
         "scheduleAtFixedRate"), 0, 2, TimeUnit.SECONDS);

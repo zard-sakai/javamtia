@@ -43,7 +43,8 @@ public class JITReorderingDemo {
           expected = 2),
       @Expect(desc = "Only 3 fields of Helper instance were initialized",
           expected = 3),
-      @Expect(desc = "Helper instance was fully initialized", expected = 4) })
+      @Expect(desc = "Helper instance was fully initialized",
+          expected = 4) })
   public int consume() {
     int sum = 0;
 
@@ -69,10 +70,10 @@ public class JITReorderingDemo {
     int payloadD;
 
     public Helper(int externalData) {
-      this.payloadA = externalData;
-      this.payloadB = externalData;
-      this.payloadC = externalData;
-      this.payloadD = externalData;
+        this.payloadA = externalData;
+        this.payloadB = externalData;
+        this.payloadC = externalData;
+        this.payloadD = externalData;
     }
 
     @Override

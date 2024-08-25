@@ -27,7 +27,9 @@ public class DiningPhilosopherProblem {
       chopsticks[i] = new Chopstick(i);
     }
 
-    String philosopherImplClassName = System.getProperty("x.philo.impl");
+//    String philosopherImplClassName = System.getProperty("x.philo.impl");
+      String philosopherImplClassName = null;
+      philosopherImplClassName = "RecoverablePhilosopher";
     if (null == philosopherImplClassName) {
       philosopherImplClassName = "DeadlockingPhilosopher";
     }

@@ -38,11 +38,13 @@ public class ExchangerBasedLogReaderThread extends AbstractLogReader {
 
   @Override
   protected void publish(RecordSet recordSet) throws InterruptedException {
+      // 提供一个 填充完毕的缓冲区 来 获取 一个 空的缓冲区 继续 填充数据
     nextToFill = exchanger.exchange(recordSet);
   }
 
   @Override
   protected RecordSet nextBatch() throws InterruptedException {
+      // 提供一个 消费完成的缓冲区 来 获取 一个 待消费的缓冲区 继续 消费数据
     consumedBatch = exchanger.exchange(consumedBatch);
     if (consumedBatch.isEmpty()) {
       consumedBatch = null;

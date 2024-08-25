@@ -18,16 +18,16 @@ public class ThreadStartVisibility {
   // 线程间的共享变量
   static int data = 0;
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws Exception {
 
     Thread thread = new Thread() {
       @Override
       public void run() {
-        // 使当前线程休眠R毫秒（R的值为随机数）
-        Tools.randomPause(50);
-
-        // 读取并打印变量data的值
-        System.out.println(data);
+        while (true){
+            // 读取并打印变量data的值
+            System.out.println(data);
+            Tools.randomPause(2* 1000,2* 1000);
+        }
       }
     };
 
@@ -36,10 +36,11 @@ public class ThreadStartVisibility {
     thread.start();
 
     // 使当前线程休眠R毫秒（R的值为随机数）
-    Tools.randomPause(50);
+    Tools.randomPause(10*1000,10*1000);
 
     // 在子线程thread启动后更新变量data的值
     data = 2;// 语句②
 
+    System.in.read();
   }
 }

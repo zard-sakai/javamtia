@@ -34,9 +34,9 @@ public class VolatileOrderingDemo {
 	}
 
 	@Observer({
-		@Expect(desc = "Normal", expected = 1),
-	  @Expect(desc = "Impossible", expected = 2),
-	  @Expect(desc = "ready not true", expected = 3) 
+            @Expect(desc = "Normal", expected = 1),
+            @Expect(desc = "Impossible", expected = 2),
+            @Expect(desc = "ready not true", expected = 3)
 	})
 	public int reader() {
 		int result = 0;

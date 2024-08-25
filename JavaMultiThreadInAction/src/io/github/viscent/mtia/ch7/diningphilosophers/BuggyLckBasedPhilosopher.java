@@ -19,6 +19,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.locks.ReentrantLock;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+import io.github.viscent.mtia.util.Tools;
 
 public class BuggyLckBasedPhilosopher extends AbstractPhilosopher {
   /**
@@ -59,7 +60,8 @@ public class BuggyLckBasedPhilosopher extends AbstractPhilosopher {
     try {
       Debug.info("%s is picking up %s on his %s...%n",
           this, chopstick, chopstick == left ? "left" : "right");
-
+      // 提高 死锁 概率
+      Tools.randomPause(50);
       chopstick.pickUp();
     } catch (Exception e) {
       // 不大可能走到这里

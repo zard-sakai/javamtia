@@ -30,7 +30,7 @@ public enum ThreadTerminationRegistry {
   }
 
   public void clearThreads() {
-    // 为保障线程安全，在遍历时将handlers复制一份
+    // 为保障线程安全，在 遍历 时将handlers复制一份
     final Set<Handler> handlersSnapshot;
     synchronized (this) {
       handlersSnapshot = new HashSet<Handler>(handlers);

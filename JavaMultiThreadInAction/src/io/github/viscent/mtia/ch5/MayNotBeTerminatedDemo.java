@@ -27,6 +27,7 @@ public class MayNotBeTerminatedDemo {
           Thread.sleep(2000);
         } catch (InterruptedException e) {
           // 什么也不做:这会导致线程中断标记被清除
+            System.out.println("run task 捕获到 中断请求");
         }
         Debug.info("after doing task");
       }

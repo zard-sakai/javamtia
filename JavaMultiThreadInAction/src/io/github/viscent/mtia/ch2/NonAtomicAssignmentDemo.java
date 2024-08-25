@@ -1,12 +1,12 @@
 /*
-æˆæƒå£°æ˜ï¼š
-æœ¬æºç ç³»ã€ŠJavaå¤šçº¿ç¨‹ç¼–ç¨‹å®æˆ˜æŒ‡å—ï¼ˆæ ¸å¿ƒç¯‡ï¼‰ã€‹ä¸€ä¹¦ï¼ˆISBNï¼š978-7-121-31065-2ï¼Œä»¥ä¸‹ç§°ä¹‹ä¸ºâ€œåŸä¹¦â€ï¼‰çš„é…å¥—æºç ï¼Œ
-æ¬²äº†è§£æœ¬ä»£ç çš„æ›´å¤šç»†èŠ‚ï¼Œè¯·å‚è€ƒåŸä¹¦ã€‚
-æœ¬ä»£ç ä»…ä¸ºåŸä¹¦çš„é…å¥—è¯´æ˜ä¹‹ç”¨ï¼Œå¹¶ä¸é™„å¸¦ä»»ä½•æ‰¿è¯ºï¼ˆå¦‚è´¨é‡ä¿è¯å’Œæ”¶ç›Šï¼‰ã€‚
-ä»¥ä»»ä½•å½¢å¼å°†æœ¬ä»£ç ä¹‹éƒ¨åˆ†æˆ–è€…å…¨éƒ¨ç”¨äºè¥åˆ©æ€§ç”¨é€”éœ€ç»ç‰ˆæƒäººä¹¦é¢åŒæ„ã€‚
-å°†æœ¬ä»£ç ä¹‹éƒ¨åˆ†æˆ–è€…å…¨éƒ¨ç”¨äºéè¥åˆ©æ€§ç”¨é€”éœ€è¦åœ¨ä»£ç ä¸­ä¿ç•™æœ¬å£°æ˜ã€‚
-ä»»ä½•å¯¹æœ¬ä»£ç çš„ä¿®æ”¹éœ€åœ¨ä»£ç ä¸­ä»¥æ³¨é‡Šçš„å½¢å¼æ³¨æ˜ä¿®æ”¹äººã€ä¿®æ”¹æ—¶é—´ä»¥åŠä¿®æ”¹å†…å®¹ã€‚
-æœ¬ä»£ç å¯ä»¥ä»ä»¥ä¸‹ç½‘å€ä¸‹è½½ï¼š
+ÊÚÈ¨ÉùÃ÷£º
+±¾Ô´ÂëÏµ¡¶Java¶àÏß³Ì±à³ÌÊµÕ½Ö¸ÄÏ£¨ºËĞÄÆª£©¡·Ò»Êé£¨ISBN£º978-7-121-31065-2£¬ÒÔÏÂ³ÆÖ®Îª¡°Ô­Êé¡±£©µÄÅäÌ×Ô´Âë£¬
+ÓûÁË½â±¾´úÂëµÄ¸ü¶àÏ¸½Ú£¬Çë²Î¿¼Ô­Êé¡£
+±¾´úÂë½öÎªÔ­ÊéµÄÅäÌ×ËµÃ÷Ö®ÓÃ£¬²¢²»¸½´øÈÎºÎ³ĞÅµ£¨ÈçÖÊÁ¿±£Ö¤ºÍÊÕÒæ£©¡£
+ÒÔÈÎºÎĞÎÊ½½«±¾´úÂëÖ®²¿·Ö»òÕßÈ«²¿ÓÃÓÚÓªÀûĞÔÓÃÍ¾Ğè¾­°æÈ¨ÈËÊéÃæÍ¬Òâ¡£
+½«±¾´úÂëÖ®²¿·Ö»òÕßÈ«²¿ÓÃÓÚ·ÇÓªÀûĞÔÓÃÍ¾ĞèÒªÔÚ´úÂëÖĞ±£Áô±¾ÉùÃ÷¡£
+ÈÎºÎ¶Ô±¾´úÂëµÄĞŞ¸ÄĞèÔÚ´úÂëÖĞÒÔ×¢ÊÍµÄĞÎÊ½×¢Ã÷ĞŞ¸ÄÈË¡¢ĞŞ¸ÄÊ±¼äÒÔ¼°ĞŞ¸ÄÄÚÈİ¡£
+±¾´úÂë¿ÉÒÔ´ÓÒÔÏÂÍøÖ·ÏÂÔØ£º
 https://github.com/Viscent/javamtia
 http://www.broadview.com.cn/31065
 */
@@ -15,57 +15,54 @@ package io.github.viscent.mtia.ch2;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 /**
- * æœ¬Demoå¿…é¡»ä½¿ç”¨32ä½Javaè™šæ‹Ÿæœºæ‰èƒ½çœ‹åˆ°éåŸå­æ“ä½œçš„æ•ˆæœ. <br>
- * è¿è¡Œæœ¬Demoæ—¶ä¹Ÿå¯ä»¥æŒ‡å®šè™šæ‹Ÿæœºå‚æ•°â€œ-clientâ€
+ * ±¾Demo±ØĞëÊ¹ÓÃ32Î»JavaĞéÄâ»ú²ÅÄÜ¿´µ½·ÇÔ­×Ó²Ù×÷µÄĞ§¹û. <br>
+ * ÔËĞĞ±¾DemoÊ±Ò²¿ÉÒÔÖ¸¶¨ĞéÄâ»ú²ÎÊı¡°-client¡±
  *
  * @author Viscent Huang
  */
 public class NonAtomicAssignmentDemo implements Runnable {
-  static long value = 0;
-  private final long valueToSet;
+    static long value = 0;
+    private final long valueToSet;
 
-  public NonAtomicAssignmentDemo(long valueToSet) {
-    this.valueToSet = valueToSet;
-  }
-
-  public static void main(String[] args) {
-    // çº¿ç¨‹updateThread1å°†dataæ›´æ–°ä¸º0
-    Thread updateThread1 = new Thread(new NonAtomicAssignmentDemo(0L));
-    // çº¿ç¨‹updateThread2å°†dataæ›´æ–°ä¸º-1
-    Thread updateThread2 = new Thread(new NonAtomicAssignmentDemo(-1L));
-    updateThread1.start();
-    updateThread2.start();
-    // ä¸è¿›è¡Œå®é™…è¾“å‡ºçš„OutputStream
-    final DummyOutputStream dos = new DummyOutputStream();
-    try (PrintStream dummyPrintSteam = new PrintStream(dos);) {
-      // å…±äº«å˜é‡valueçš„å¿«ç…§ï¼ˆå³ç¬é—´å€¼ï¼‰
-      long snapshot;
-      while (0 == (snapshot = value) || -1 == snapshot) {
-        // ä¸è¿›è¡Œå®é™…çš„è¾“å‡ºï¼Œä»…ä»…æ˜¯ä¸ºäº†é˜»æ­¢JITç¼–è¯‘å™¨åšå¾ªç¯ä¸å˜è¡¨è¾¾å¼å¤–æä¼˜åŒ–
-        dummyPrintSteam.print(snapshot);
-      }
-      System.err.printf("Unexpected data: %d(0x%016x)", snapshot, snapshot);
+    public NonAtomicAssignmentDemo(long valueToSet) {
+        this.valueToSet = valueToSet;
     }
-    System.exit(0);
-  }
 
-  static class DummyOutputStream extends OutputStream {
+    public static void main(String[] args) {
+        // Ïß³ÌupdateThread1½«data¸üĞÂÎª0
+        Thread updateThread1 = new Thread(new NonAtomicAssignmentDemo(0L));
+        // Ïß³ÌupdateThread2½«data¸üĞÂÎª-1
+        Thread updateThread2 = new Thread(new NonAtomicAssignmentDemo(-1L));
+        ScheduledExecutorService executorService = Executors.newScheduledThreadPool(3);
+        executorService.schedule(updateThread1, 2, TimeUnit.SECONDS);
+        executorService.schedule(updateThread2, 2, TimeUnit.SECONDS);
+        while (0 == value || -1 == value) {
+            System.out.println("Õı³£À´Ëµ£¬Õâ¸öÑ­»· ²»»á±» ÍË³ö£¬value ÒªÃ´1 ÒªÃ´0£¬µ«Êµ¼Ê ²»ÊÇ");
+        }
+        System.err.printf("Unexpected data: %d(0x%016x)", value, value);
+    }
+
+    static class DummyOutputStream extends OutputStream {
+        @Override
+        public void write(int b) throws IOException {
+            // ²»Êµ¼Ê½øĞĞÊä³ö
+        }
+    }
+
+    @SuppressFBWarnings(value = "ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD",
+            justification = "ÌØÒâÎªÖ®")
     @Override
-    public void write(int b) throws IOException {
-      // ä¸å®é™…è¿›è¡Œè¾“å‡º
+    public void run() {
+        for (; ; ) {
+            value = valueToSet;
+        }
     }
-  }
-
-  @SuppressFBWarnings(value = "ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD",
-      justification = "ç‰¹æ„ä¸ºä¹‹")
-  @Override
-  public void run() {
-    for (;;) {
-      value = valueToSet;
-    }
-  }
 }

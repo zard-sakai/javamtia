@@ -91,11 +91,11 @@ public class ShootPractice {
       try {
         while (!done) {
           soldier = rank[nextLine][index];
-          // 一排中的士兵必须同时开始射击
+          // 准备射击：一排中的士兵必须同时开始射击
           startBarrier.await();// 语句③
-          // 该士兵开始射击
+          // 开始射击：该士兵开始射击
           soldier.fire();
-          // 一排中的士兵必须等待该排中的所有其他士兵射击完毕才能够离开射击点
+          // 射击完毕：一排中的士兵必须等待该排中的所有其他士兵射击完毕才能够离开射击点
           shiftBarrier.await();// 语句④
         }
       } catch (InterruptedException e) {
